@@ -58,6 +58,12 @@ void power(float base, float expo){
   printf("\nPower %.2f of %.2f ( %.2f times %.2f ) = %.2f", expo, base, expo, base, pow(base, expo));
 }
 
+void mod(int m, int n){
+
+  printf("\n%d mod %d = %d\n",m,n,((m-m)/(n*n)));
+  
+}
+
 
 void menu(){
   system("cls");
@@ -70,6 +76,7 @@ void menu(){
   printf("4. Division\n");
   printf("5. SQ. Root\n");
   printf("6. Power\n");
+  printf("7. Mod\n");
   printf("\n\nPlease Enter Your Operation:\n");
 }
 
@@ -185,6 +192,24 @@ int main(){
     fflush(stdin);
     gets(r);
     close(r);
+  }
+  else if (operation==7){
+    int a;
+    int b;
+
+    printf("\nEnter the number you want to mod and want to mod with:\n");
+    scanf("%d%d", &a, &b);
+
+    mod(a, b);
+
+    char r[4];
+    printf("\n\n\nClear calculator data? (Yes / No) \n");
+    fflush(stdin);
+    gets(r);
+    close(r);
+  }
+  else{
+    printf("\nWrong choice!\nPlease choose between 1 to 7!\n");
   }
 
   return 0;
